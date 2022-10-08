@@ -1,11 +1,22 @@
 import { useForm } from '@/hooks/useForm';
 import { IUserLogin } from '@/models';
-import { useState } from 'react'
+import { userService } from '@/services/user.service';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
     const { formValues, handleInputChange } = useForm<IUserLogin>({ email: "", password: "" });
-    const handleSubmit = (e: any) => {
+    const navigate = useNavigate();
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
+        const loginResponse = await userService.login(formValues);
+        if (loginResponse === null) {
+            //mostrar popuperror
+            return;
+        }
+        //guardarId en el localstorage
+        //guardarId en redux
+        //redireccionar a home
+        navigate("/home");
     }
     return (
         <form onSubmit={handleSubmit}>
@@ -15,7 +26,7 @@ export const LoginForm = () => {
             </div>
             <div>
                 <h2>Contraseña</h2>
-                <input type="password" name="password" onChange={handleInputChange} />
+                <input type="password" minLength={4} name="password" onChange={handleInputChange} />
             </div>
             <button>Iniciar sesión</button>
         </form>

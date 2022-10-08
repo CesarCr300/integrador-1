@@ -3,6 +3,7 @@ import { SnackbarProvider } from 'notistack';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home/Home';
 import { Login } from './pages/Login';
 import { SnackbarUtilsConfigurator } from './utilities';
 
@@ -15,7 +16,7 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Login />} />
-              {/* <Route path="/home" element={} /> */}
+              <Route path="/home" element={<Home />} />
             </Routes>
           </BrowserRouter>
         </Provider>

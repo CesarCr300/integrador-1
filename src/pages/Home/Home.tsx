@@ -1,6 +1,6 @@
 import { TabPanel } from "@/components/TabPanel";
 import { BasicPage } from "@/pages/BasicPage";
-import { HomeTabGeneral } from "./components/General/HomeTabGeneral.component";
+import { HomeTabGeneral } from "@/pages/Home/components/HomeTabGeneral.component";
 
 export const Home = () => {
     return (

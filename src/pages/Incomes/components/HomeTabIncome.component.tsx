@@ -1,6 +1,6 @@
 import { IIncomes } from '@/models/income.model';
 import { useEffect, useState } from 'react';
-import { getAllIncomes } from '../../application/home_income.application';
+import { getAllIncomes } from '@/pages/Incomes/application/income.application';
 export const HomeTabIncome = () => {
     const [information, setInformation] = useState<IIncomes | null>(null);
     const userId = 1;

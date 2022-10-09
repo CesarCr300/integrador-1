@@ -1,7 +1,19 @@
+export interface IIncomeCategory {
+    name: string;
+    amount: number
+}
+
+export interface IIncomeDetail {
+    description: string;
+    amount: number;
+    id: number;
+    categoryName: string
+}
+
 export interface IIncomes {
     amount: number;
-    categories: { name: string, amount: number }[]
-    details: { description: string, amount: number, id: number, categoryName: string }[]
+    categories: IIncomeCategory[]
+    details: IIncomeDetail[]
 }
 
 export interface IIncomeCreation {

@@ -16,7 +16,11 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Login />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Home navbarValueProp={0} />} />
+              <Route path="/home/incomes" element={<Home navbarValueProp={1} />} />
+              <Route path="/home/expenses" element={<Home navbarValueProp={2} />} />
+              <Route path="/home/accounts" element={<Home navbarValueProp={3} />} />
+              <Route path="/home/categories" element={<Home navbarValueProp={4} />} />
             </Routes>
           </BrowserRouter>
         </Provider>

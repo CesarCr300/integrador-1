@@ -1,7 +1,7 @@
 import { TabPanel } from "@/components/TabPanel";
 import { Box, Tab, Tabs } from "@mui/material"
 import { useState } from "react"
-import { HomeTabGeneral } from "./components/HomeTabGeneral.component";
+import { HomeTabGeneral } from "./components/General/HomeTabGeneral.component";
 import { HomeTabIncome } from "./components/HomeTabIncome.component";
 
 export const Home = () => {

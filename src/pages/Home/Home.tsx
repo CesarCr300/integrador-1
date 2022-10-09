@@ -2,7 +2,7 @@ import { TabPanel } from "@/components/TabPanel";
 import { Box, Tab, Tabs } from "@mui/material"
 import { useState } from "react"
 import { HomeTabGeneral } from "./components/General/HomeTabGeneral.component";
-import { HomeTabIncome } from "./components/HomeTabIncome.component";
+import { HomeTabIncome } from "./components/Income/HomeTabIncome.component";
 
 export const Home = () => {
     const [navbarValue, setNavbarValue] = useState(0);

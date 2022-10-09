@@ -1,11 +1,11 @@
 import { TabPanel } from "@/components/TabPanel"
 import { BasicPage } from "@/pages/BasicPage"
 
-export const Incomes = () => {
+export const Categories = () => {
   return (
-    <BasicPage navbarValueProp={1}>
-      <TabPanel value={1} index={1}>
-        Ingresos
+    <BasicPage navbarValueProp={4}>
+      <TabPanel value={4} index={4}>
+        Categorías
       </TabPanel>
     </BasicPage>
   )

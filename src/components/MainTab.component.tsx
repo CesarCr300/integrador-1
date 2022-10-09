@@ -7,10 +7,10 @@ export const MainTab = ({ navbarValue, handleNavbarChange, navigate }: { navbarV
     <Box>
       <Tabs value={navbarValue} onChange={handleNavbarChange} aria-label="basic tabs example">
         <Tab label="Resumen" value={0} onClick={() => { navigate("/home") }} />
-        <Tab label="Ingresos" value={1} onClick={() => { navigate("/home/incomes") }} />
-        <Tab label="Egresos" value={2} onClick={() => { navigate("/home/expenses") }} />
-        <Tab label="Cuentas" value={3} onClick={() => { navigate("/home/accounts") }} />
-        <Tab label="Categorías" value={4} onClick={() => { navigate("/home/categories") }} />
+        <Tab label="Ingresos" value={1} onClick={() => { navigate("/incomes") }} />
+        <Tab label="Egresos" value={2} onClick={() => { navigate("/expenses") }} />
+        <Tab label="Cuentas" value={3} onClick={() => { navigate("/accounts") }} />
+        <Tab label="Categorías" value={4} onClick={() => { navigate("/categories") }} />
       </Tabs>
     </Box>
   )

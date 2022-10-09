@@ -13,7 +13,7 @@ export const incomeService = {
         return {
             amount: 100,
             categories: [{ name: "salario", amount: 100 }],
-            details: [{ description: "este es el pago del mes", amount: 100, id: 1 }]
+            details: [{ description: "este es el pago del mes", amount: 100, id: 1, categoryName: "Salario" }]
         };
     },
     post: async (userId: number, income: IIncomeCreation): Promise<boolean> => {

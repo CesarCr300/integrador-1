@@ -7,7 +7,7 @@ import { IExpenses } from "@/models";
 import { TabPanel } from "@/components/TabPanel"
 import { BasicPage } from "@/pages/BasicPage"
 import { ExpenseCategories } from "@/pages/Expenses/components/ExpenseCategories.component";
-import { IncomesDetails } from "@/pages/Expenses/components/IncomesDetails.component";
+import { ExpensesDetails } from "@/pages/Expenses/components/ExpensesDetails.component";
 import { getAllExpenses } from "@/pages/Expenses/application/expense.application";
 
 export const Expenses = () => {
@@ -27,7 +27,7 @@ export const Expenses = () => {
             <div><Link to={{ pathname: "create" }}>Agregar</Link></div>
           </div>
           <ExpenseCategories categories={information?.categories} />
-          <IncomesDetails details={information?.details} />
+          <ExpensesDetails details={information?.details} />
         </div>
       </TabPanel>
     </BasicPage>

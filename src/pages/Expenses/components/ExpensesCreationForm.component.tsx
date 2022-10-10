@@ -2,15 +2,18 @@ import { getAccountsToSelect } from "@/application";
 import { getCategoriesToSelect } from "@/application";
 import { Select } from "@/components";
 import { useForm } from "@/hooks"
-import { ISelectOption, IIncomeCreation } from "@/models";
+import { ISelectOption, IExpenseCreation } from "@/models";
+import { createExpense } from "@/pages/Expenses/application/expense.application";
+import { AppStore } from "@/redux/store";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { createIncome } from "@/pages";
 
-export const IncomesCreationForm = () => {
+export const ExpensesCreationForm = () => {
     const navigate = useNavigate();
+    const user = useSelector((store: AppStore) => store.user);
 
-    const { formValues, handleInputChange, handleSelectChange } = useForm<IIncomeCreation>({
+    const { formValues, handleInputChange, handleSelectChange } = useForm<IExpenseCreation>({
         amount: 0,
         description: "",
         date: "",
@@ -20,18 +23,16 @@ export const IncomesCreationForm = () => {
     });
     const [categoriesOptions, setCategoriesOptions] = useState<ISelectOption[]>([]);
     const [accountsOptions, setAccountsOptions] = useState<ISelectOption[]>([]);
-    useEffect(() => {
-        getCategoriesToSelect(1, setCategoriesOptions);
-        getAccountsToSelect(1, setAccountsOptions);
-    }, []);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const wasCreated = createIncome(1, formValues);
-        if (!wasCreated) return;
-        console.log('se creo');
-        navigate("/incomes");
+        createExpense(user.userId, formValues,navigate);
     }
+
+    useEffect(() => {
+        getCategoriesToSelect(user.userId, setCategoriesOptions);
+        getAccountsToSelect(user.userId, setAccountsOptions);
+    }, []);
     return (
         <form onSubmit={handleSubmit}>
             <div>

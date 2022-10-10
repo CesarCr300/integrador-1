@@ -1,11 +1,11 @@
-import { IIncomeDetail } from "@/models/income.model"
+import { IExpenseDetail } from "@/models"
 import { Link } from "react-router-dom"
 
-interface IIncomesDetailsProps {
-    details?: IIncomeDetail[]
+interface IExpensesDetailsProps {
+    details?: IExpenseDetail[]
 }
 
-export const IncomesDetails = ({ details }: IIncomesDetailsProps) => {
+export const ExpensesDetails = ({ details }: IExpensesDetailsProps) => {
     return (
         <div>
             <h2>Detalles</h2>

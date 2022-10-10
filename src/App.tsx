@@ -12,6 +12,7 @@ import { Categories } from '@/pages/Categories/Categories';
 import { IncomesCreate } from '@/pages/Incomes/IncomesCreation';
 import { IncomesDetail } from '@/pages/Incomes/IncomesDetail';
 import { ProtectedRoutes } from './components/ProtectedRoutes';
+import { ExpensesCreation } from './pages/Expenses/ExpensesCreation';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/incomes/create" element={<IncomesCreate />} />
               <Route path="/incomes/:id" element={<IncomesDetail />} />
               <Route path="/expenses" element={<Expenses />} />
+              <Route path="/expenses/create" element={<ExpensesCreation />} />
               <Route path="/accounts" element={<Accounts />} />
               <Route path="/categories" element={<Categories />} />
             </Route>

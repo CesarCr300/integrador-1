@@ -7,8 +7,10 @@ export const getAllExpenses = async (userId: number, setData: React.Dispatch<Rea
     setData(response);
 }
 
-export const createExpense = async (userId: number, data: IExpenseCreation) => {
-    return await expenseService.post(userId, data);
+export const createExpense = async (userId: number, data: IExpenseCreation, navigate: NavigateFunction) => {
+    const wasCreated = await expenseService.post(userId, data);
+    if (!wasCreated) return;
+    navigate("/expenses");
 }
 
 export const deleteExpenseById = async (incomeId: number, navigate: NavigateFunction) => {

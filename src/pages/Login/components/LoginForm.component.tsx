@@ -23,11 +23,11 @@ export const LoginForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <h2>Correo</h2>
+                <p>Correo</p>
                 <input type="email" name="email" onChange={handleInputChange} />
             </div>
             <div>
-                <h2>Contraseña</h2>
+                <p>Contraseña</p>
                 <input type="password" minLength={4} name="password" onChange={handleInputChange} />
             </div>
             <button>Iniciar sesión</button>

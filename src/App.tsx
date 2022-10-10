@@ -15,6 +15,8 @@ import { ProtectedRoutes } from './components/ProtectedRoutes';
 import { ExpensesCreation } from './pages/Expenses/ExpensesCreation';
 import { ExpensesDetail } from './pages/Expenses/ExpensesDetail';
 import { PageContainer } from './components/PageContainer.component';
+import { Register } from './pages/Register/Register';
+import "./styles/base.styles.css"
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
           <PageContainer>
             <Routes>
               <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route element={<ProtectedRoutes />}>
                 <Route path="/home" element={<Home />} />
                 <Route path="/incomes" element={<Incomes />} />

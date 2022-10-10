@@ -1,4 +1,4 @@
-import { IGeneralInformation } from "@/models/general_information.model";
+import { IGeneralInformation } from "@/models/general-information.model";
 
 export const createGeneralInformationAdapter = (data: any): IGeneralInformation => {
     const accounts = data?.accounts.map((account: any) => {

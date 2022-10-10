@@ -1,6 +1,6 @@
-import { IGeneralInformation } from "@/models/general_information.model"
+import { IGeneralInformation } from "@/models/general-information.model"
 import { useEffect, useState } from "react"
-import { getGeneralInformation } from "../application/home_general.application";
+import { getGeneralInformation } from "@/pages/Home/application/home-general.application";
 
 export const HomeTabGeneral = () => {
   const [information, setInformation] = useState<IGeneralInformation | null>(null);

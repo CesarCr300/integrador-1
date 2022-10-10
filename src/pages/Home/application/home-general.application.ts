@@ -1,4 +1,4 @@
-import { IGeneralInformation } from "@/models/general_information.model";
+import { IGeneralInformation } from "@/models/general-information.model";
 import { generalService } from "@/services/general.service";
 
 export const getGeneralInformation = async (userId: number, setInformation: React.Dispatch<React.SetStateAction<IGeneralInformation | null>>) => {

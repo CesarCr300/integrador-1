@@ -1,6 +1,6 @@
-import { createGeneralInformationAdapter } from "@/adapters/general_information.adapter";
+import { createGeneralInformationAdapter } from "@/adapters/general-information.adapter";
 import { serviceUrl } from ".";
-import { IGeneralInformation } from "@/models/general_information.model"
+import { IGeneralInformation } from "@/models/general-information.model"
 
 export const generalService = {
     get: async (userId: number): Promise<IGeneralInformation | null> => {

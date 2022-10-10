@@ -1,4 +1,4 @@
-import { createCategoryAdapter } from "@/adapters/categories.adapter";
+import { createCategoryAdapter } from "@/adapters/category.adapter";
 import { ICategory } from "@/models/category.model";
 import { serviceUrl } from "@/services";
 

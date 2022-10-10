@@ -24,11 +24,11 @@ export const LoginForm = () => {
         <form onSubmit={handleSubmit}>
             <div>
                 <p>Correo</p>
-                <input type="email" name="email" onChange={handleInputChange} />
+                <input type="email" name="email" onChange={handleInputChange} required={true} />
             </div>
             <div>
                 <p>Contraseña</p>
-                <input type="password" minLength={4} name="password" onChange={handleInputChange} />
+                <input type="password" minLength={4} name="password" onChange={handleInputChange} required={true} />
             </div>
             <button>Iniciar sesión</button>
         </form>

@@ -5,9 +5,13 @@ export const useForm = <T extends {}>(values: T) => {
         const { name, value } = event.target;
         setFormValues({ ...formValues, [name]: value });
     }
-    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>, isNumber = false) => {
         const { name, value } = event.target;
-        setFormValues({ ...formValues, [name]: value });
+        if (isNumber) {
+            setFormValues({ ...formValues, [name]: Number(value) });
+        } else {
+            setFormValues({ ...formValues, [name]: value });
+        }
     }
     return { formValues, handleInputChange, handleSelectChange };
 }

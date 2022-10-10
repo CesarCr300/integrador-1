@@ -22,4 +22,5 @@ export interface IIncomeCreation {
     date: string;
     categoryId: number;
     comment: string;
+    accountId: number;
 }

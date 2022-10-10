@@ -1,3 +1,4 @@
+import { getAccountsToSelect } from "@/application/accounts.application";
 import { getCategoriesToSelect } from "@/application/categories.application";
 import { Select } from "@/components/Select.component";
 import { useForm } from "@/hooks/useForm"
@@ -11,35 +12,30 @@ export const IncomesCreationForm = () => {
         description: "",
         date: "",
         categoryId: 1,
-        comment: ""
+        comment: "",
+        accountId: 1
     });
     const [categoriesOptions, setCategoriesOptions] = useState<ISelectOption[]>([]);
+    const [accountsOptions, setAccountsOptions] = useState<ISelectOption[]>([]);
     useEffect(() => {
         getCategoriesToSelect(1, setCategoriesOptions);
-    }, [])
-    useEffect(() => {
-        console.log(formValues)
-    }, [formValues])
-
-
+        getAccountsToSelect(1, setAccountsOptions);
+    }, []);
     return (
         <form>
             <div>
                 <input type="number" name="amount" value={formValues.amount} onChange={handleInputChange} />
-                <input name="description" type="text" />
+                <input name="description" type="text" value={formValues.description} onChange={handleInputChange} />
             </div>
             <div>
-                <input type="date" />
-                <Select handleSelectChange={handleSelectChange} name="categoryId" value={formValues.categoryId} options={categoriesOptions} />
+                <input type="date" name="date" value={formValues.date} onChange={handleInputChange}/>
+                <Select handleSelectChange={handleSelectChange} name="categoryId" value={formValues.categoryId} options={categoriesOptions} valueIsNumber={true} />
             </div>
             <div>
-                <input type="text" />
-                <select name="select">
-                    <option value="value1">Value 1</option>
-                    <option value="value2">Value 2</option>
-                    <option value="value3">Value 3</option>
-                </select>
+                <input type="text" name="comment" value={formValues.comment} onChange={handleInputChange}/>
+                <Select handleSelectChange={handleSelectChange} name="accountId" value={formValues.accountId} options={accountsOptions} valueIsNumber={true} />
             </div>
+            <button>Crear</button>
         </form>
     )
 }

@@ -9,7 +9,6 @@ export * from './Incomes/Incomes';
 export * from './Incomes/IncomesCreation';
 export * from './Incomes/IncomesDetail';
 export * from './Incomes/application/income.application';
-export * from './Incomes/components/HomeTabIncome.component';
 export * from './Incomes/components/IncomesCategories.component';
 export * from './Incomes/components/IncomesCreationForm.component';
 export * from './Incomes/components/IncomesDetails.component';

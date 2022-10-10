@@ -1,8 +1,9 @@
+import { IUser } from '@/models';
 import { configureStore } from '@reduxjs/toolkit';
 import { userSlice } from './states/user';
 
 export interface AppStore {
-  user: any;
+  user: IUser;
 }
 
 export default configureStore<AppStore>({

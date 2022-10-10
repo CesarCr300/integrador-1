@@ -1,10 +1,10 @@
-import { User } from '@/models';
+import { IUser } from '@/models';
 import { createSlice } from '@reduxjs/toolkit';
 
-export const UserEmptyState: User = {
+export const UserEmptyState: IUser = {
   name: '',
-  gender: '',
-  status: ''
+  lastName: '',
+  userId: 0
 };
 
 export const userSlice = createSlice({

@@ -13,7 +13,7 @@ export const generalService = {
         return {
             incomesAmount: 2000,
             expensesAmount: 3000,
-            accounts: [{ name: "BBVA", amount: 2000 }]
+            accounts: [{ name: "BBVA", amount: 2000 }, { name: "Billetera", amount: 2000 }]
         }
     }
 };

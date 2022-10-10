@@ -1,21 +1,23 @@
 import { useForm } from '@/hooks/useForm';
 import { IUserLogin } from '@/models';
+import { createUser } from '@/redux/states/user';
 import { userService } from '@/services/user.service';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
-    const { formValues, handleInputChange } = useForm<IUserLogin>({ email: "", password: "" });
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { formValues, handleInputChange } = useForm<IUserLogin>({ email: "", password: "" });
+
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         const loginResponse = await userService.login(formValues);
         if (loginResponse === null) {
-            //mostrar popuperror
             return;
         }
-        //guardarId en el localstorage
-        //guardarId en redux
-        //redireccionar a home
+        dispatch(createUser(loginResponse));
         navigate("/home");
     }
     return (

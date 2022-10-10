@@ -1,4 +1,4 @@
-import { ICategory } from "@/models/category.model"
+import { ICategory } from "@/models"
 
 export const createCategoryAdapter = (data: any): ICategory[] => {
     return data.map((category: any) => {

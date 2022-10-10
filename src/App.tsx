@@ -10,7 +10,7 @@ import { Expenses } from '@/pages/Expenses/Expenses';
 import { Accounts } from '@/pages/Accounts/Accounts';
 import { Categories } from '@/pages/Categories/Categories';
 import { IncomesCreate } from '@/pages/Incomes/IncomesCreation';
-import { IncomesDetails } from '@/pages/Incomes/IncomesDetails';
+import { IncomesDetail } from '@/pages/Incomes/IncomesDetail';
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/incomes" element={<Incomes />} />
             <Route path="/incomes/create" element={<IncomesCreate />} />
-            <Route path="/incomes/:id" element={<IncomesDetails />} />
+            <Route path="/incomes/:id" element={<IncomesDetail />} />
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/accounts" element={<Accounts />} />
             <Route path="/categories" element={<Categories />} />

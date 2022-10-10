@@ -1,5 +1,5 @@
-import { createIncomesAdapter } from "@/adapters/income.adapter";
-import { IIncomeCreation, IIncomes } from "@/models/income.model";
+import { createIncomesAdapter } from "@/adapters";
+import { IIncomeCreation, IIncomes } from "@/models";
 import { API_URL } from "@/utilities/variables";
 
 export const incomeService = {

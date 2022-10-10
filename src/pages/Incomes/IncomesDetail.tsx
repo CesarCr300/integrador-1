@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { deleteById } from "@/pages/Incomes/application/income.application";
 import { useEffect, useState } from "react";
 
-export const IncomesDetails = () => {
+export const IncomesDetail = () => {
     let { id } = useParams();
     const [incomeId, setIncomeId] = useState<number | null>(null);
     const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import { createCategoryAdapter } from "@/adapters/category.adapter";
-import { ICategory } from "@/models/category.model";
+import { createCategoryAdapter } from "@/adapters";
+import { ICategory } from "@/models";
 import {API_URL} from "@/utilities/variables";
 
 export const categoryService = {

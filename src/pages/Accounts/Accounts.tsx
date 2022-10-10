@@ -1,5 +1,5 @@
-import { TabPanel } from "@/components/TabPanel"
-import { BasicPage } from "@/pages/BasicPage"
+import { TabPanel } from "@/components"
+import { BasicPage } from "@/pages"
 
 export const Accounts = () => {
     return (

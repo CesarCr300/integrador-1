@@ -1,5 +1,4 @@
 import { Box, Tabs, Tab } from '@mui/material'
-import React from 'react'
 import { NavigateFunction } from 'react-router'
 
 export const MainTab = ({ navbarValue, handleNavbarChange, navigate }: { navbarValue: number, handleNavbarChange: (event: React.SyntheticEvent, newValue: number) => void, navigate: NavigateFunction }) => {

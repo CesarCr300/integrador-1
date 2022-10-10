@@ -1,4 +1,4 @@
-import { IIncomes } from "@/models/income.model"
+import { IIncomes } from "@/models"
 
 export const createIncomesAdapter = (data: any): IIncomes => {
     const categories = data.categories.map((category: any) => {

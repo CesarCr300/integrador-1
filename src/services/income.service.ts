@@ -1,10 +1,10 @@
 import { createIncomesAdapter } from "@/adapters/income.adapter";
 import { IIncomeCreation, IIncomes } from "@/models/income.model";
-import { serviceUrl } from "./index";
+import { API_URL } from "@/utilities/variables";
 
 export const incomeService = {
     get: async (userId: number): Promise<IIncomes | null> => {
-        // const petition = await fetch(serviceUrl + `v1/income?idUser=${userId}`);
+        // const petition = await fetch(API_URL + `v1/income?idUser=${userId}`);
         // if (!petition.ok) {
         //     return null;
         // }
@@ -25,13 +25,13 @@ export const incomeService = {
         //     comment: income.comment,
         //     idAccount: userId
         // };
-        // const petition = await fetch(serviceUrl + `v1/income`, { method: "POST", body: JSON.stringify(incomeService) });
+        // const petition = await fetch(API_URL + `v1/income`, { method: "POST", body: JSON.stringify(incomeService) });
         // return petition.ok;
         return true;
     },
     delete: async (incomeId: number): Promise<boolean> => {
         // const body = { idIncome: incomeId }
-        // const petition = await fetch(serviceUrl + `v1/income/delete`, { method: "POST", body: JSON.stringify(body) });
+        // const petition = await fetch(API_URL + `v1/income/delete`, { method: "POST", body: JSON.stringify(body) });
         return true;
     }
 };

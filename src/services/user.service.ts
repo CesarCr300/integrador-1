@@ -1,10 +1,10 @@
-import { serviceUrl } from ".";
+import { API_URL } from "@/utilities/variables";
 import { IUserLogin, IUserRegister } from "@/models";
 import { createUserAdapter } from "@/adapters";
 
 export const userService = {
     login: async (values: IUserLogin) => {
-        // const petition = await fetch(serviceUrl + "v1/login", { method: "POST", body: JSON.stringify(values) });
+        // const petition = await fetch(API_URL + "v1/login", { method: "POST", body: JSON.stringify(values) });
         // if (!petition.ok){
         //     return null;
         // }
@@ -21,7 +21,7 @@ export const userService = {
         //     pass: userData.password,
         //     phone: userData.phone
         // };
-        // const petition = await fetch(serviceUrl + "v1/saveUsuario", { method: "POST", body: JSON.stringify(body) });
+        // const petition = await fetch(API_URL + "v1/saveUsuario", { method: "POST", body: JSON.stringify(body) });
         // if (!petition.ok) {
         //     return null;
         // }

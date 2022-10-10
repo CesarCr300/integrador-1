@@ -1,10 +1,10 @@
 import { createCategoryAdapter } from "@/adapters/category.adapter";
 import { ICategory } from "@/models/category.model";
-import { serviceUrl } from "@/services";
+import {API_URL} from "@/utilities/variables";
 
 export const categoryService = {
     get: async (userId: number): Promise<ICategory[] | null> => {
-        // const petition = await fetch(`${serviceUrl}v1/categorys?idUser=${userId}`);
+        // const petition = await fetch(`${API_URL}v1/categorys?idUser=${userId}`);
         // if (!petition.ok) return null;
         // const data = await petition.json();
         // return createCategoryAdapter(data);

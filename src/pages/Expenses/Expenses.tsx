@@ -1,27 +1,32 @@
-import { TabPanel } from "@/components/TabPanel"
-import { IIncomes } from "@/models/income.model";
-import { BasicPage } from "@/pages/BasicPage"
 import { useEffect, useState } from "react";
-import { getAllIncomes } from "@/pages/Incomes/application/income.application";
-import { IncomesCategories } from "@/pages/Incomes/components/IncomesCategories.component";
-import { IncomesDetails } from "@/pages/Incomes/components/IncomesDetails.component";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { AppStore } from "@/redux/store";
+import { IExpenses } from "@/models";
+import { TabPanel } from "@/components/TabPanel"
+import { BasicPage } from "@/pages/BasicPage"
+import { ExpenseCategories } from "@/pages/Expenses/components/ExpenseCategories.component";
+import { IncomesDetails } from "@/pages/Expenses/components/IncomesDetails.component";
+import { getAllExpenses } from "@/pages/Expenses/application/expense.application";
+
 export const Expenses = () => {
-  const [information, setInformation] = useState<IIncomes | null>(null);
-  const userId = 1;
+  const user = useSelector((store: AppStore) => store.user);
+
+  const [information, setInformation] = useState<IExpenses | null>(null);
+
   useEffect(() => {
-    getAllIncomes(userId, setInformation);
+    getAllExpenses(user.userId, setInformation);
   }, []);
   return (
-    <BasicPage navbarValueProp={1}>
-      <TabPanel value={1} index={1}>
+    <BasicPage navbarValueProp={2}>
+      <TabPanel value={2} index={2}>
         <div>
           <div>
-            <div><h2>Ingresos: {information?.amount}</h2></div>
+            <div><h2>Egresos: {information?.amount}</h2></div>
             <div><Link to={{ pathname: "create" }}>Agregar</Link></div>
           </div>
-          <IncomesCategories categories={information?.categories} />
+          <ExpenseCategories categories={information?.categories} />
           <IncomesDetails details={information?.details} />
         </div>
       </TabPanel>

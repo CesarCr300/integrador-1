@@ -1,10 +1,10 @@
-import { IIncomeCategory } from "@/models/income.model"
+import { IExpenseCategory } from "@/models"
 
-interface IIncomesCategoriesProps {
-    categories?: IIncomeCategory[]
+interface IExpenseCategoriesProps {
+    categories?: IExpenseCategory[]
 }
 
-export const IncomesCategories = ({ categories }: IIncomesCategoriesProps) => {
+export const ExpenseCategories = ({ categories }: IExpenseCategoriesProps) => {
     return (
         <div>
             <h2>Categorías</h2>

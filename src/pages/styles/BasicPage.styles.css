@@ -1,0 +1,19 @@
+.page {
+    background-color: #D9D9D9;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    min-height: 75px;
+    background-color: #389C3C;
+}
+
+.container {
+    padding: 20px;
+}

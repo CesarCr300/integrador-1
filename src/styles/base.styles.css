@@ -4,6 +4,7 @@
 }
 
 .header {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +13,19 @@
     text-align: center;
     min-height: 75px;
     background-color: #389C3C;
+}
+
+.header__title {
+    margin: 0;
+    padding: 0;
+}
+
+.header__logout {
+    position: absolute;
+    right: 20px;
+    background: none;
+    color: white;
+    border: none;
 }
 
 .container {

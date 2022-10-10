@@ -14,26 +14,29 @@ import { IncomesDetail } from '@/pages/Incomes/IncomesDetail';
 import { ProtectedRoutes } from './components/ProtectedRoutes';
 import { ExpensesCreation } from './pages/Expenses/ExpensesCreation';
 import { ExpensesDetail } from './pages/Expenses/ExpensesDetail';
+import { PageContainer } from './components/PageContainer.component';
 
 const App = () => {
   return (
     <React.StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/incomes" element={<Incomes />} />
-              <Route path="/incomes/create" element={<IncomesCreate />} />
-              <Route path="/incomes/:id" element={<IncomesDetail />} />
-              <Route path="/expenses" element={<Expenses />} />
-              <Route path="/expenses/create" element={<ExpensesCreation />} />
-              <Route path="/expenses/:id" element={<ExpensesDetail />} />
-              <Route path="/accounts" element={<Accounts />} />
-              <Route path="/categories" element={<Categories />} />
-            </Route>
-          </Routes>
+          <PageContainer>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/home" element={<Home />} />
+                <Route path="/incomes" element={<Incomes />} />
+                <Route path="/incomes/create" element={<IncomesCreate />} />
+                <Route path="/incomes/:id" element={<IncomesDetail />} />
+                <Route path="/expenses" element={<Expenses />} />
+                <Route path="/expenses/create" element={<ExpensesCreation />} />
+                <Route path="/expenses/:id" element={<ExpensesDetail />} />
+                <Route path="/accounts" element={<Accounts />} />
+                <Route path="/categories" element={<Categories />} />
+              </Route>
+            </Routes>
+          </PageContainer>
         </BrowserRouter>
       </Provider>
     </React.StrictMode>

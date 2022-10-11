@@ -12,6 +12,7 @@ export const RegisterForm = () => {
     const { formValues, handleInputChange } = useForm<IUserRegister>({ email: "", lastName: "", password: "", name: "", phone: "" });
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         registerUser(formValues, dispatch, createUser, navigate);
     }
     return (

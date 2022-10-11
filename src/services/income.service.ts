@@ -20,7 +20,7 @@ export const incomeService = {
             comment: income.comment,
             idAccount: userId
         };
-        const petition = await fetch(API_URL + `v1/income`, {
+        const petition = await fetch(API_URL + `v1/income/save`, {
             method: "POST", body: JSON.stringify(incomeService), headers: {
                 'Content-Type': 'application/json',
             }

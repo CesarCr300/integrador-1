@@ -20,7 +20,7 @@ export const expenseService = {
             comment: expense.comment,
             idAccount: userId
         };
-        const petition = await fetch(API_URL + `v1/expenses`, {
+        const petition = await fetch(API_URL + `v1/expenses/save`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
             }

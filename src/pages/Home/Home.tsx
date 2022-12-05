@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 
 export const Home = () => {
     const user = useSelector((store: AppStore) => store.user);
-    useEffect(() => { console.log(user) }, [user])
     return (
         <BasicPage navbarValueProp={0}>
             <TabPanel value={0} index={0}>

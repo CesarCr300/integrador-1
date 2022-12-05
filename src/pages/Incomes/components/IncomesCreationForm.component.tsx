@@ -6,9 +6,12 @@ import { ISelectOption, IIncomeCreation } from "@/models";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { createIncome } from "@/pages";
+import { useSelector } from "react-redux";
+import { AppStore } from "@/redux/store";
 
 export const IncomesCreationForm = () => {
     const navigate = useNavigate();
+    const user = useSelector((store: AppStore) => store.user);
 
     const { formValues, handleInputChange, handleSelectChange } = useForm<IIncomeCreation>({
         amount: 0,
@@ -21,15 +24,14 @@ export const IncomesCreationForm = () => {
     const [categoriesOptions, setCategoriesOptions] = useState<ISelectOption[]>([]);
     const [accountsOptions, setAccountsOptions] = useState<ISelectOption[]>([]);
     useEffect(() => {
-        getCategoriesToSelect(1, setCategoriesOptions);
-        getAccountsToSelect(1, setAccountsOptions);
+        getCategoriesToSelect(user.userId, setCategoriesOptions);
+        getAccountsToSelect(user.userId, setAccountsOptions);
     }, []);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const wasCreated = createIncome(1, formValues);
         if (!wasCreated) return;
-        console.log('se creo');
         navigate("/incomes");
     }
     return (

@@ -6,12 +6,14 @@ import { getAllIncomes } from "@/pages/Incomes/application/income.application";
 import { IncomesCategories } from "@/pages/Incomes/components/IncomesCategories.component";
 import { IncomesDetails } from "@/pages/Incomes/components/IncomesDetails.component";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { AppStore } from "@/redux/store";
 
 export const Incomes = () => {
   const [information, setInformation] = useState<IIncomes | null>(null);
-  const userId = 1;
+  const user = useSelector((store: AppStore) => store.user);
   useEffect(() => {
-    getAllIncomes(userId, setInformation);
+    getAllIncomes(user.userId, setInformation);
   }, []);
   return (
     <BasicPage navbarValueProp={1}>

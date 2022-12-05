@@ -7,7 +7,6 @@ import { NavigateFunction } from "react-router";
 export const registerUser = async (data: IUserRegister, dispatch: Dispatch<any>, createUser: ActionCreatorWithPayload<any, string>, navigate: NavigateFunction) => {
     const userId = await userService.register(data);
     if (userId === null) {
-        console.log("no se creo");
         return;
     }
     dispatch(createUser({

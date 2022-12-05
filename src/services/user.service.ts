@@ -4,6 +4,9 @@ import { createUserAdapter } from "@/adapters";
 
 export const userService = {
     login: async (values: IUserLogin) => {
+        if ((window as any)?.isDevelopment) {
+            return createUserAdapter({ name: "Cesar", lastName: "Contreras", idUser: 1 });
+        }
         const petition = await fetch(API_URL + "v1/users/login", {
             method: "POST", body: JSON.stringify(values), headers: {
                 'Content-Type': 'application/json',
@@ -16,6 +19,9 @@ export const userService = {
         return createUserAdapter(response);
     },
     register: async (userData: IUserRegister) => {
+        if ((window as any)?.isDevelopment) {
+            return 1;
+        }
         const body = {
             name: userData.name,
             lastName: userData.lastName,

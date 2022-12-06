@@ -1,3 +1,4 @@
+import { IconDelete } from "@/components/Icons/IconDelete";
 import { ICategory } from "@/models";
 import { AppStore } from "@/redux/store";
 import { useState, useEffect } from "react";
@@ -10,6 +11,6 @@ export const CategoriesList = () => {
         getAllCategories(user.userId, setCategories)
     }, []);
     return <section>
-        {categories?.map(category => <article key={category.id}>{category.name}</article>)}
+        {categories?.map(category => <article key={category.id}>{category.name} <IconDelete></IconDelete></article>)}
     </section>
 }

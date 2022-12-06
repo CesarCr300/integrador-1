@@ -8,6 +8,7 @@ import { IncomesDetails } from "@/pages/Incomes/components/IncomesDetails.compon
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppStore } from "@/redux/store";
+import { Button } from "@/components/Buttons/Button";
 
 export const Incomes = () => {
   const [information, setInformation] = useState<IIncomes | null>(null);
@@ -21,7 +22,8 @@ export const Incomes = () => {
         <div>
           <div>
             <div><h2>Ingresos: {information?.amount}</h2></div>
-            <div><Link to={{ pathname: "create" }}>Agregar</Link></div>
+
+            <div><Link to={{ pathname: "create" }}><Button text="Agregar" onClick={() => { }}></Button></Link></div>
           </div>
           <IncomesCategories categories={information?.categories} />
           <IncomesDetails details={information?.details} />

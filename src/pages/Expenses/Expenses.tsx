@@ -9,6 +9,7 @@ import { BasicPage } from "@/pages/BasicPage"
 import { ExpenseCategories } from "@/pages/Expenses/components/ExpenseCategories.component";
 import { ExpensesDetails } from "@/pages/Expenses/components/ExpensesDetails.component";
 import { getAllExpenses } from "@/pages/Expenses/application/expense.application";
+import { Button } from "@/components/Buttons/Button";
 
 export const Expenses = () => {
   const user = useSelector((store: AppStore) => store.user);
@@ -22,9 +23,9 @@ export const Expenses = () => {
     <BasicPage navbarValueProp={2}>
       <TabPanel value={2} index={2}>
         <div>
-          <div>
+          <div style={{ display: "flex", gap: "30px" }}>
             <div><h2>Egresos: {information?.amount}</h2></div>
-            <div><Link to={{ pathname: "create" }}>Agregar</Link></div>
+            <div><Link to={{ pathname: "create" }}><Button onClick={() => { }} text="Agregar" /></Link></div>
           </div>
           <ExpenseCategories categories={information?.categories} />
           <ExpensesDetails details={information?.details} />

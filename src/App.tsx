@@ -17,6 +17,7 @@ import { ExpensesDetail } from './pages/Expenses/ExpensesDetail';
 import { PageContainer } from './components/PageContainer.component';
 import { Register } from './pages/Register/Register';
 import "./styles/base.styles.css"
+import { CategoriesCreation } from './pages/Categories/CategoriesCreation';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/expenses/:id" element={<ExpensesDetail />} />
                 <Route path="/accounts" element={<Accounts />} />
                 <Route path="/categories" element={<Categories />} />
+                <Route path="/categories/create" element={<CategoriesCreation />} />
               </Route>
             </Routes>
           </PageContainer>

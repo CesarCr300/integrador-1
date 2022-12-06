@@ -1,5 +1,5 @@
 import { createCategoryAdapter } from "@/adapters";
-import { ICategory } from "@/models";
+import { ICategory, ICategoryCreation } from "@/models";
 import { API_URL } from "@/utilities/variables";
 
 export const categoryService = {
@@ -14,8 +14,24 @@ export const categoryService = {
         }
 
         return createCategoryAdapter(data);
-    }, 
-    delete: async (idCategory: number): Promise<boolean>=>{
+    },
+    create: async (category: ICategoryCreation): Promise<boolean> => {
+        if ((window as any)?.isDevelopment) {
+            return true;
+        }
+        const body = {
+            "idUser": category.userId,
+            "nameCategory": category.name,
+            "descriptionCategory": category.description,
+        }
+        const petition = await fetch(API_URL + `v1/categorys/save`, {
+            method: "POST", body: JSON.stringify(body), headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        return petition.ok;
+    },
+    delete: async (idCategory: number): Promise<boolean> => {
         if ((window as any)?.isDevelopment) {
             return true;
         }

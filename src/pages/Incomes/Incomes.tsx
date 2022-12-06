@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppStore } from "@/redux/store";
 import { Button } from "@/components/Buttons/Button";
+import { Row } from "@/components/Row";
 
 export const Incomes = () => {
   const [information, setInformation] = useState<IIncomes | null>(null);
@@ -20,11 +21,10 @@ export const Incomes = () => {
     <BasicPage navbarValueProp={1}>
       <TabPanel value={1} index={1}>
         <div>
-          <div>
+          <Row>
             <div><h2>Ingresos: {information?.amount}</h2></div>
-
             <div><Link to={{ pathname: "create" }}><Button text="Agregar" onClick={() => { }}></Button></Link></div>
-          </div>
+          </Row>
           <IncomesCategories categories={information?.categories} />
           <IncomesDetails details={information?.details} />
         </div>

@@ -18,6 +18,7 @@ import { PageContainer } from './components/PageContainer.component';
 import { Register } from './pages/Register/Register';
 import "./styles/base.styles.css"
 import { CategoriesCreation } from './pages/Categories/CategoriesCreation';
+import { AccountsCreation } from './pages/Accounts/AccountsCreation';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/expenses/create" element={<ExpensesCreation />} />
                 <Route path="/expenses/:id" element={<ExpensesDetail />} />
                 <Route path="/accounts" element={<Accounts />} />
+                <Route path="/accounts/create" element={<AccountsCreation />} />
                 <Route path="/categories" element={<Categories />} />
                 <Route path="/categories/create" element={<CategoriesCreation />} />
               </Route>

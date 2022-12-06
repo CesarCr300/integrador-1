@@ -14,5 +14,17 @@ export const categoryService = {
         }
 
         return createCategoryAdapter(data);
+    }, 
+    delete: async (idCategory: number): Promise<boolean>=>{
+        if ((window as any)?.isDevelopment) {
+            return true;
+        }
+        const body = { idCategory: idCategory }
+        const petition = await fetch(API_URL + `v1/categorys/delete`, {
+            method: "POST", body: JSON.stringify(body), headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        return petition.ok;
     }
 }

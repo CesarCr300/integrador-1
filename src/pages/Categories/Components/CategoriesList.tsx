@@ -9,5 +9,7 @@ export const CategoriesList = () => {
     useEffect(() => {
         getAllCategories(user.userId, setCategories)
     }, []);
-    return <></>
+    return <section>
+        {categories?.map(category => <article key={category.id}>{category.name}</article>)}
+    </section>
 }

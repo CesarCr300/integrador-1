@@ -32,6 +32,7 @@ export const expenseService = {
             idUser: userId,
             codeType: "E"
         };
+        console.log(body)
         const petition = await fetch(API_URL + `v1/expenses/save`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',

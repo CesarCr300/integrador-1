@@ -1,11 +1,17 @@
+import { IconDelete } from "@/components/Icons/IconDelete"
 import { IExpenseDetail } from "@/models"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { deleteExpenseById } from "../application/expense.application"
 
 interface IExpensesDetailsProps {
     details?: IExpenseDetail[]
 }
 
 export const ExpensesDetails = ({ details }: IExpensesDetailsProps) => {
+    const navigate = useNavigate();
+    const handleDelete = (id: number) => { 
+        deleteExpenseById(id, navigate);
+    }
     return (
         <div>
             <h2>Detalles</h2>
@@ -14,7 +20,7 @@ export const ExpensesDetails = ({ details }: IExpensesDetailsProps) => {
                     return (
                         <article key={detail.id}>
                             <p>{detail.description} - {detail.categoryName}: s/{detail.amount}</p>
-                            <Link to={{ pathname: `${detail.id}` }}>ver</Link>
+                            <IconDelete onClick={() => { handleDelete(detail.id) }}></IconDelete>
                         </article>
                     )
                 })}

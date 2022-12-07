@@ -17,5 +17,15 @@ export const generalService = {
         }
         const response = await petition.json();
         return createGeneralInformationAdapter(response);
+    },
+    downloadReport: async (userId: number) => {
+        if ((window as any)?.isDevelopment) {
+            return null;
+        }
+        const petition = await fetch(API_URL + `v1/resume/report?idUser=${userId}`);
+        if (!petition.ok) {
+            return null;
+        }
+        return await petition.blob();
     }
 };

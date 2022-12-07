@@ -19,6 +19,7 @@ import { Register } from './pages/Register/Register';
 import "./styles/base.styles.css"
 import { CategoriesCreation } from './pages/Categories/CategoriesCreation';
 import { AccountsCreation } from './pages/Accounts/AccountsCreation';
+import { Configuration } from './pages/Configuration/Configuration';
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
                 <Route path="/accounts/create" element={<AccountsCreation />} />
                 <Route path="/categories" element={<Categories />} />
                 <Route path="/categories/create" element={<CategoriesCreation />} />
+                <Route path="/configuration" element={<Configuration />} />
               </Route>
             </Routes>
           </PageContainer>

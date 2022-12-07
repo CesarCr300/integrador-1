@@ -1,6 +1,7 @@
 import { IGeneralInformation } from "@/models/general-information.model"
 import { useEffect, useState } from "react"
 import { getGeneralInformation } from "@/pages/Home/application/home-general.application";
+import { Button } from "@/components/Buttons/Button";
 
 export const HomeTabGeneral = () => {
   const [information, setInformation] = useState<IGeneralInformation | null>(null);
@@ -23,6 +24,9 @@ export const HomeTabGeneral = () => {
             </article>
           })}
         </section>
+      </section>
+      <section>
+        <Button text="Descargar reporte (pdf)" onClick={() => {}}></Button>
       </section>
     </div>
   )

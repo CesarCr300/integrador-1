@@ -13,5 +13,5 @@ export const useForm = <T extends {}>(values: T) => {
             setFormValues({ ...formValues, [name]: value });
         }
     }
-    return { formValues, handleInputChange, handleSelectChange };
+    return { formValues, handleInputChange, handleSelectChange, setFormValues };
 }

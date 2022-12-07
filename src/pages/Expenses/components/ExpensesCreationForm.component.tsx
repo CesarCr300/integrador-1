@@ -13,7 +13,7 @@ export const ExpensesCreationForm = () => {
     const navigate = useNavigate();
     const user = useSelector((store: AppStore) => store.user);
 
-    const { formValues, handleInputChange, handleSelectChange } = useForm<IExpenseCreation>({
+    const { formValues, handleInputChange, handleSelectChange, setFormValues } = useForm<IExpenseCreation>({
         amount: 0,
         description: "",
         date: "",
@@ -33,6 +33,9 @@ export const ExpensesCreationForm = () => {
         getCategoriesToSelect(user.userId, setCategoriesOptions);
         getAccountsToSelect(user.userId, setAccountsOptions);
     }, []);
+    // useEffect(()=>{
+    //     setFormValues((prevFormValues)=>{return {...prevFormValues, categoryId: categoriesOptions[0].value}})
+    // },[categoriesOptions])
     return (
         <form onSubmit={handleSubmit}>
             <div>

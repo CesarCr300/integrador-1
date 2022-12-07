@@ -20,7 +20,8 @@ export const ConfigurationForm = () => {
         setFormValues((prevState) => { return { ...prevState, sendNotification: isChecked } })
     }, [isChecked]);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e:any) => {
+        e.preventDefault();
         updateConfigurationNotification(formValues);
     }
 
@@ -37,7 +38,7 @@ export const ConfigurationForm = () => {
                 />
                 Enviar notificaciones
             </div>
-            <Button text="Guardar" onClick={() => { handleSubmit() }} />
+            <Button text="Guardar" onClick={handleSubmit} />
         </form>
     )
 }

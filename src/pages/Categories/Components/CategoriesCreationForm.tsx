@@ -15,7 +15,8 @@ export const CategoriesCreationForm = () => {
         description: "",
     });
 
-    const handleSubmit = () => {
+    const handleSubmit = (e:any) => {
+        e.preventDefault();
         createCategory(formValues, navigate);
     };
 

@@ -27,8 +27,8 @@ export const incomeService = {
             idCategory: income.categoryId,
             comment: income.comment,
             idAccount: income.accountId,
-            idUser:userId,
-            codeType:"I"
+            idUser: userId,
+            codeType: "I"
         };
         const petition = await fetch(API_URL + `v1/movements/save`, {
             method: "POST", body: JSON.stringify(incomeService), headers: {

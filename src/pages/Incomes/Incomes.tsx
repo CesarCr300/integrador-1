@@ -13,10 +13,11 @@ import { Row } from "@/components/Row";
 
 export const Incomes = () => {
   const [information, setInformation] = useState<IIncomes | null>(null);
+  const [actualizar, setActualizar] = useState(true);
   const user = useSelector((store: AppStore) => store.user);
   useEffect(() => {
     getAllIncomes(user.userId, setInformation);
-  }, []);
+  }, [actualizar]);
   return (
     <BasicPage navbarValueProp={1}>
       <TabPanel value={1} index={1}>
@@ -26,7 +27,7 @@ export const Incomes = () => {
             <div><Link to={{ pathname: "create" }}><Button text="Agregar" onClick={() => { }}></Button></Link></div>
           </Row>
           <IncomesCategories categories={information?.categories} />
-          <IncomesDetails details={information?.details} />
+          <IncomesDetails information={information} setActualizar={setActualizar} />
         </div>
       </TabPanel>
     </BasicPage>

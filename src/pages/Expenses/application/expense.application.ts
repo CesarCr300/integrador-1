@@ -13,7 +13,8 @@ export const createExpense = async (userId: number, data: IExpenseCreation, navi
     navigate("/expenses");
 }
 
-export const deleteExpenseById = async (incomeId: number, navigate: NavigateFunction) => {
-    const wasDeleted = await expenseService.delete(incomeId);
-    if (wasDeleted) navigate("/incomes");
+export const deleteExpenseById = async (expenseId: number, setActualizar: React.Dispatch<React.SetStateAction<boolean>>) => {
+    const wasDeleted = await expenseService.delete(expenseId);
+    if (!wasDeleted) return;
+    setActualizar((x) => !x);
 }

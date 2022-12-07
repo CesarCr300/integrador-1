@@ -14,7 +14,7 @@ import { Row } from "@/components/Row";
 
 export const Expenses = () => {
   const user = useSelector((store: AppStore) => store.user);
-
+  const [actualizar, setActualizar] = useState(true)
   const [information, setInformation] = useState<IExpenses | null>(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const Expenses = () => {
             <div><Link to={{ pathname: "create" }}><Button onClick={() => { }} text="Agregar" /></Link></div>
           </Row>
           <ExpenseCategories categories={information?.categories} />
-          <ExpensesDetails details={information?.details} />
+          <ExpensesDetails details={information?.details} setActualizar={setActualizar}/>
         </div>
       </TabPanel>
     </BasicPage>

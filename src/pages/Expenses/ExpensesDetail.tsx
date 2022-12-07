@@ -10,7 +10,7 @@ export const ExpensesDetail = () => {
     const navigate = useNavigate();
     const handleDelete = () => {
         if (expenseId === null) return;
-        deleteExpenseById(expenseId, navigate);
+        // deleteExpenseById(expenseId, navigate);
     }
     useEffect(() => {
         if (id === undefined) return;

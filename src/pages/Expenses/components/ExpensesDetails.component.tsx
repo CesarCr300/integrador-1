@@ -1,16 +1,17 @@
 import { IconDelete } from "@/components/Icons/IconDelete"
-import { IExpenseDetail } from "@/models"
+import { IExpenseDetail, IExpenses } from "@/models"
 import { Link, useNavigate } from "react-router-dom"
 import { deleteExpenseById } from "../application/expense.application"
 
 interface IExpensesDetailsProps {
-    details?: IExpenseDetail[]
+    details?: IExpenseDetail[],
+    setActualizar: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const ExpensesDetails = ({ details }: IExpensesDetailsProps) => {
+export const ExpensesDetails = ({ details, setActualizar }: IExpensesDetailsProps) => {
     const navigate = useNavigate();
-    const handleDelete = (id: number) => { 
-        deleteExpenseById(id, navigate);
+    const handleDelete = (id: number) => {
+        deleteExpenseById(id, setActualizar);
     }
     return (
         <div>

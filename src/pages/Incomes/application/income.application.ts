@@ -11,7 +11,8 @@ export const createIncome = async (userId: number, data: IIncomeCreation) => {
     return await incomeService.post(userId, data);
 }
 
-export const deleteIncomeById = async (incomeId: number, navigate: NavigateFunction) => {
+export const deleteIncomeById = async (incomeId: number, setIncomes: React.Dispatch<React.SetStateAction<boolean>>) => {
     const wasDeleted = await incomeService.delete(incomeId);
-    if (wasDeleted) navigate("/incomes");
+    if (!wasDeleted) return;
+    setIncomes((x) => !x);
 }

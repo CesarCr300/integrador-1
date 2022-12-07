@@ -11,7 +11,7 @@ export const expenseService = {
                 details: [{ description: "semana", amount: 100, id: 1, categoryName: "comida" }]
             }
         }
-        const petition = await fetch(API_URL + `v1/expenses?idUser=${userId}`);
+        const petition = await fetch(API_URL + `v1/movements?idUser=${userId}&codeType=E`);
         if (!petition.ok) {
             return null;
         }
@@ -28,7 +28,9 @@ export const expenseService = {
             date: expense.date,
             idCategory: expense.categoryId,
             comment: expense.comment,
-            idAccount: userId
+            idAccount: expense.accountId,
+            idUser: userId,
+            codeType: "E"
         };
         const petition = await fetch(API_URL + `v1/expenses/save`, {
             method: "POST", body: JSON.stringify(body), headers: {
@@ -41,8 +43,8 @@ export const expenseService = {
         if ((window as any)?.isDevelopment) {
             return true;
         }
-        const body = { idExpenses: expenseId }
-        const petition = await fetch(API_URL + `v1/expenses/delete`, {
+        const body = { idMovement: expenseId }
+        const petition = await fetch(API_URL + `v1/movements/delete`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
             }

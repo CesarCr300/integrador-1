@@ -5,6 +5,7 @@ import { accountService } from "../../../services/accounts.service";
 
 export const getAccounts = async (userId: number, setData: React.Dispatch<React.SetStateAction<IAccount[] | null>>) => {
     const accounts = await accountService.get(userId);
+    if (accounts == null) return;
     setData(accounts);
 }
 

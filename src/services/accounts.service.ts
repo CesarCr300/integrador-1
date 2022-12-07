@@ -32,7 +32,7 @@ export const accountService = {
             return true;
         }
         const body = { idUser: account.userId, nameAccount: account.name, descriptionAccount: account.description };
-        const petition = await fetch(`${API_URL}v1/accounts/delete`, {
+        const petition = await fetch(`${API_URL}v1/accounts/save`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
             }

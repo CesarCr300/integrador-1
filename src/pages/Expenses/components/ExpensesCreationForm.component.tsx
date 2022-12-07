@@ -26,16 +26,20 @@ export const ExpensesCreationForm = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        createExpense(user.userId, formValues,navigate);
+        createExpense(user.userId, formValues, navigate);
     }
 
     useEffect(() => {
         getCategoriesToSelect(user.userId, setCategoriesOptions);
         getAccountsToSelect(user.userId, setAccountsOptions);
     }, []);
-    // useEffect(()=>{
-    //     setFormValues((prevFormValues)=>{return {...prevFormValues, categoryId: categoriesOptions[0].value}})
-    // },[categoriesOptions])
+    useEffect(() => {
+        setFormValues((prevFormValues) => { return { ...prevFormValues, categoryId: categoriesOptions[0].value as number } })
+    }, [categoriesOptions]);
+    useEffect(() => {
+        setFormValues((prevFormValues) => { return { ...prevFormValues, accountId: accountsOptions[0].value as number } })
+    }, [setAccountsOptions]);
+
     return (
         <form onSubmit={handleSubmit}>
             <div>

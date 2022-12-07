@@ -40,6 +40,7 @@ export const incomeService = {
     delete: async (incomeId: number): Promise<boolean> => {
         if ((window as any)?.isDevelopment) return true;
         const body = { idMovement: incomeId }
+        console.log(body)
         const petition = await fetch(API_URL + `v1/movements/delete`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
@@ -47,4 +48,4 @@ export const incomeService = {
         });
         return petition.ok;
     }
-};
+}; 

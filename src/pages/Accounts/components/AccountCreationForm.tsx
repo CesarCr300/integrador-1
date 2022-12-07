@@ -15,7 +15,8 @@ export const AccountCreationForm = () => {
         description: ""
     });
 
-    const handleSubmit = () => {
+    const handleSubmit = (e:any) => {
+        e.preventDefault();
         createAccount(formValues, navigate);
     };
 

@@ -29,7 +29,7 @@ export const userService = {
             pass: userData.password,
             phone: userData.phone
         };
-        const petition = await fetch(API_URL + "v1/saveUsuario", {
+        const petition = await fetch(API_URL + "v1/users/save", {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
             }

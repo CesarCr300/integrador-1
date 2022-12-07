@@ -11,7 +11,7 @@ export const incomeService = {
                 details: [{ description: "este es el pago del mes", amount: 100, id: 1, categoryName: "Salario" }]
             };
         }
-        const petition = await fetch(API_URL + `v1/income?idUser=${userId}`);
+        const petition = await fetch(API_URL + `v1/movements?idUser=${userId}&codeType=I`);
         if (!petition.ok) {
             return null;
         }
@@ -26,9 +26,11 @@ export const incomeService = {
             date: income.date,
             idCategory: income.categoryId,
             comment: income.comment,
-            idAccount: userId
+            idAccount: income.accountId,
+            idUser:userId,
+            codeType:"I"
         };
-        const petition = await fetch(API_URL + `v1/income/save`, {
+        const petition = await fetch(API_URL + `v1/movements/save`, {
             method: "POST", body: JSON.stringify(incomeService), headers: {
                 'Content-Type': 'application/json',
             }
@@ -37,8 +39,8 @@ export const incomeService = {
     },
     delete: async (incomeId: number): Promise<boolean> => {
         if ((window as any)?.isDevelopment) return true;
-        const body = { idIncome: incomeId }
-        const petition = await fetch(API_URL + `v1/income/delete`, {
+        const body = { idMovement: incomeId }
+        const petition = await fetch(API_URL + `v1/movements/delete`, {
             method: "POST", body: JSON.stringify(body), headers: {
                 'Content-Type': 'application/json',
             }

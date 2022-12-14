@@ -13,7 +13,6 @@ export const IncomesDetails = ({ information, setActualizar }: IIncomesDetailsPr
     const handleDelete = (id: number) => {
         deleteIncomeById(id, setActualizar);
     }
-    
     return (
         <div>
             <h2>Detalles</h2>

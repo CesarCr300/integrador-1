@@ -34,10 +34,10 @@ export const ExpensesCreationForm = () => {
         getAccountsToSelect(user.userId, setAccountsOptions);
     }, []);
     useEffect(() => {
-        setFormValues((prevFormValues) => { return { ...prevFormValues, categoryId: categoriesOptions[0].value as number } })
+        setFormValues((prevFormValues) => { return { ...prevFormValues, categoryId: categoriesOptions[0]?.value as number } })
     }, [categoriesOptions]);
     useEffect(() => {
-        setFormValues((prevFormValues) => { return { ...prevFormValues, accountId: accountsOptions[0].value as number } })
+        setFormValues((prevFormValues) => { return { ...prevFormValues, accountId: accountsOptions[0]?.value as number } })
     }, [setAccountsOptions]);
 
     return (

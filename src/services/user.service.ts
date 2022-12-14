@@ -38,6 +38,6 @@ export const userService = {
             return null;
         }
         const response = await petition.json();
-        return response.idUser;
+        return createUserAdapter(response);
     },
 }

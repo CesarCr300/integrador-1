@@ -1,13 +1,15 @@
 import { IGeneralInformation } from "@/models/general-information.model"
 import { useEffect, useState } from "react"
-import { getGeneralInformation } from "@/pages/Home/application/home-general.application";
+import { downloadReport, getGeneralInformation } from "@/pages/Home/application/home-general.application";
 import { Button } from "@/components/Buttons/Button";
+import { useSelector } from "react-redux";
+import { AppStore } from "@/redux/store";
 
 export const HomeTabGeneral = () => {
   const [information, setInformation] = useState<IGeneralInformation | null>(null);
-  const userId = 1;
+  const user = useSelector((store: AppStore) => store.user);
   useEffect(() => {
-    getGeneralInformation(userId, setInformation);
+    getGeneralInformation(user.userId, setInformation);
   }, [])
   return (
     <div>
@@ -26,7 +28,9 @@ export const HomeTabGeneral = () => {
         </section>
       </section>
       <section>
-        <Button text="Descargar reporte (pdf)" onClick={() => {}}></Button>
+        <Button text="Descargar reporte (pdf)" onClick={() => {
+          downloadReport(user.userId)
+        }}></Button>
       </section>
     </div>
   )
